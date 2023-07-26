@@ -1,7 +1,6 @@
-// userController.js
 const userQueries = require('../db/queries/userQueries');
 
-function getAllUsers(req, res) {
+const getAllUsers = function (req, res) {
   userQueries.getAllUsers()
     .then(users => {
       res.json({ users });
@@ -9,7 +8,7 @@ function getAllUsers(req, res) {
     .catch(err => {
       res.status(500).json({ error: err.message });
     });
-}
+};
 
 // Other user-related functions can be defined here
 

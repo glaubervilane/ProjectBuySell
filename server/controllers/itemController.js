@@ -1,7 +1,6 @@
-// itemController.js
 const itemQueries = require('../db/queries/itemQueries');
 
-function getAllItems(req, res) {
+const getAllItems = function(req, res) {
   itemQueries.getAllItems()
     .then(items => {
       res.json({ items });
@@ -9,7 +8,7 @@ function getAllItems(req, res) {
     .catch(err => {
       res.status(500).json({ error: err.message });
     });
-}
+};
 
 // Other item-related functions can be defined here
 
