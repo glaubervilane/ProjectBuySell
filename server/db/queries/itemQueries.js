@@ -1,5 +1,5 @@
 
-const db = require('../db'); // Assuming you have a database connection set up in db.js
+const db = require('../db');
 
 const getAllItems = function () {
   return db.select('*').from('items');
