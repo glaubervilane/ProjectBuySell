@@ -1,0 +1,37 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectBuySell - Home</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to ProjectBuySell</h1>
+    <!-- Add navigation links here, if needed -->
+  </header>
+  <main>
+    <!-- Your main content goes here -->
+    <div>
+      <h2>Featured Items</h2>
+      <!-- Display featured items here using EJS tags and data -->
+      <% if (items && items.length > 0) { %>
+        <ul>
+          <% items.forEach(item => { %>
+            <li><%= item.name %> - <%= item.price %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No items available</p>
+      <% } %>
+    </div>
+  </main>
+  <footer>
+    <!-- Your footer content goes here -->
+    <p>&copy; <%= new Date().getFullYear() %> ProjectBuySell. All rights reserved.</p>
+  </footer>
+</body>
+</html>
